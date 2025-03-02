@@ -1,32 +1,37 @@
-def tinh_tien_thuong(hieu_suat, so_nam_lam_viec):
+def tinh_tien_thuong(x, y):
   """Tính tiền thưởng cho nhân viên.
 
   Args:
-    hieu_suat: Hiệu suất (1, 0, hoặc -1).
-    so_nam_lam_viec: Số năm làm việc (số nguyên).
+    x: Hiệu suất (1, 0, hoặc -1).
+    y: Số năm làm việc (số nguyên).
 
   Returns:
     Tiền thưởng.
   """
-  if hieu_suat == 1:
-    if so_nam_lam_viec < 1:
+  if x == 1:
+    if y < 1:
       return 200
-    elif 1 <= so_nam_lam_viec <= 2:
+    elif 1 <= y <= 2:
       return 500
-    elif 2 < so_nam_lam_viec <= 5:
+    elif 2 < y <= 5:
       return 700
     else:
       return 1000
-  elif hieu_suat == 0:
-    if so_nam_lam_viec < 1:
+  elif x == 0:
+    if y < 1:
       return 50
-    elif 1 <= so_nam_lam_viec <= 2:
-      return 200
-    elif 2 < so_nam_lam_viec <= 5:
+    elif 1 <= y <= 2:
+      return 100
+    elif 2 < y <= 5:
       return 300
     else:
       return 500
-  elif hieu_suat == -1:
-    return 0 # Lỗi: thiếu kiểm tra số năm làm việc
+  elif x == -1:
+    if y < 2: 
+      return 0
+    else:
+      return 100 
   else:
-    return "Đầu vào không hợp lệ"
+    return "Invalid input"
+  
+
